@@ -1,1 +1,33 @@
+//пример применения конструктора с параметрами
 
+class Vehicle{
+    int passenger;
+    int wheels;
+    int Speed;
+    int burnUp;
+
+    Vehicle(int p, int m, int b){  //конструктор с параметрами
+       passenger = p;
+       Speed = m;
+       burnUp = b;
+    }
+
+    double distance(double interval){
+        double value = Speed*interval;
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle(3, 100, 8);
+        Vehicle bus = new Vehicle(50, 80, 5);
+
+        double interval = 1;
+        double distanceCar = car.distance(interval);
+        double distanceBus = bus.distance(interval);
+
+        System.out.println("Легковушка с " + car.passenger + " пассажирами, проедет за 1 час " + distanceCar + " км");
+        System.out.println("Автобус с " + bus.passenger + " пассажирами, проедет за 1 час " + distanceBus + " км");
+    }
+}
