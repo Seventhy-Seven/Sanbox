@@ -1,0 +1,29 @@
+//пример перегружаемых методов
+
+class Basket{
+    void Pay(double money){
+        System.out.println("Оплачено наличными " + money);
+    }
+
+    void Pay(String cardNum){
+        System.out.println("Оплачено по кредитной карте № "+ cardNum);
+    }
+
+    void Pay(String accountName, String BankCode){
+        System.out.println("Переведенно на счёт № " + accountName + " в банке " + BankCode);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Basket test1 = new Basket();
+        Basket test2 = new Basket();
+        Basket test3 = new Basket();
+
+        test1.Pay(300);
+        test2.Pay(1234567);
+        test3.Pay(String.valueOf(9892834), "Сбербанк");
+    }
+}
+
