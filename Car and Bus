@@ -1,1 +1,36 @@
+//простой пример использования метода возвращающего значение в классе
 
+class Vehicle{
+    int passengers;
+    int wheels;
+    int burnUp;
+    int maxSpeed;
+
+    double distance(double interval){
+        double value = maxSpeed*interval;
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle();
+        car.passengers = 3;
+        car.wheels = 4;
+        car.burnUp = 7;
+        car.maxSpeed = 180;
+
+        Vehicle bus = new Vehicle();
+        bus.maxSpeed = 140;
+        bus.burnUp = 5;
+        bus.wheels = 4;
+        bus.passengers = 50;
+
+        double time = 0.5;
+        double distanceCar = car.distance(time);
+        double distanceBus = bus.distance(time);
+
+        System.out.println("автомобиль с " + car.passengers + " пассажирами, пройдет путь " + distanceCar + " км");
+        System.out.println("автобус с " + bus.passengers + " пассажирами, пройдёт путь  " + distanceBus + " км");
+    }
+}
