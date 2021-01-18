@@ -1,0 +1,35 @@
+//Пример наследования класса
+
+class Vehicle{
+    int passengers;
+    int wheels;
+    int burnUp;
+    int maxSpeed;
+
+    double distance(double interval){
+        double value = maxSpeed*interval;
+        return value;
+    }
+
+    Vehicle(){
+        this.passengers = 2;
+        this.wheels = 4;
+        this.burnUp = 10;
+        this.maxSpeed = 160;
+    }
+}
+
+class Auto extends Vehicle{
+    boolean sunroof;
+}
+public class Main {
+    public static void main(String[] args) {
+        Auto BMW = new Auto();
+        BMW.sunroof = true;
+
+        System.out.println("Путь, пройденный за 1.5 часа: " + BMW.distance(1.5) + " км");
+        System.out.println("Максимальная скорость " + BMW.maxSpeed + " км/ч");
+        System.out.println("Наличие люка " + BMW.sunroof);
+    }
+}
+
