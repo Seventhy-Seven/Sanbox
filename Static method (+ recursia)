@@ -1,0 +1,33 @@
+//пример статических методов 
+
+class Factorial{
+    static long computeI(int n){
+        long result = 1;
+        for(int i = 1; i<=n; i++)
+            result*=i;
+            return result;
+    }
+
+    static long computeR(int n){
+        if (n==1) return n;
+        return computeR(n-1)*n;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Factorial f = new Factorial();
+        System.out.println("Вычисление факториала в цикле: ");
+        for(int i = 6; i>0; i--){
+            System.out.println(i + "! = " + Factorial.computeI(i));
+        }
+        System.out.println();
+
+        System.out.println("Вычисление факториала рекурсивным методом: ");
+        for(int b = 1; b<=6; b++){
+            System.out.println(b + "! = " + Factorial.computeR(b));
+        }
+
+    }
+}
+
