@@ -1,0 +1,62 @@
+//Пример абстрактного класса
+
+abstract class Shape{
+    abstract double area();
+}
+
+class Point extends Shape{
+    public String toString() {
+        return "Точка";
+    }
+    double area(){
+        return 0;
+    }
+}
+
+class Triangle extends Shape{
+    int cathetus1;
+    int cathetus2;
+
+    Triangle(int cathetus1, int cathetus2){
+        this.cathetus1 = cathetus1;
+        this.cathetus2 = cathetus2;
+    }
+
+    public String toString(){
+        return "Треугольник";
+    }
+
+    double area(){
+        return ((cathetus1*cathetus2) / 2.0);
+    }
+}
+
+class Circle extends Shape{
+    int radius;
+
+    Circle(int radius){
+        this.radius = radius;
+    }
+
+    public String toString(){
+        return "Круг";
+    }
+
+    double area(){
+        return ((radius*radius) * 3.14);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Point po = new Point();
+        Triangle tr = new Triangle(5,3);
+        Circle ci = new Circle(9);
+        Shape[] s = {po, tr, ci};
+
+        System.out.println("Расчет площади фигур");
+        for(int i = 0; i < s.length; i++){
+            System.out.println(s[i].toString() + ": " + s[i].area());
+        }
+    }
+}
