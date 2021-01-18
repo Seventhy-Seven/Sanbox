@@ -19,7 +19,7 @@ class Vehicle{
     }
 }
 
-class Auto extends Vehicle{
+class Auto extends Vehicle{  // создали новый класс Auto, который является подклассом базового класса Vehicle
     boolean sunroof;
 }
 public class Main {
