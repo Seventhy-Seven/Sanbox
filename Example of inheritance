@@ -5,26 +5,33 @@ class Vehicle{
     int wheels;
     int burnUp;
     int maxSpeed;
+    boolean sunroof;
 
     double distance(double interval){
         double value = maxSpeed*interval;
         return value;
     }
 
-    Vehicle(){
+    Vehicle(int p, int w, int b, int speed, boolean s){
         this.passengers = 2;
         this.wheels = 4;
         this.burnUp = 10;
         this.maxSpeed = 160;
+        this.sunroof = true;
     }
 }
 
-class Auto extends Vehicle{  // создали новый класс Auto, который является подклассом базового класса Vehicle
+class Auto extends Vehicle{   // создали новый класс Auto, который является подклассом базового класса Vehicle
     boolean sunroof;
+
+    Auto(boolean sunroof){
+        super(2,4,6,150,true);
+        this.sunroof = sunroof;
+    }
 }
 public class Main {
     public static void main(String[] args) {
-        Auto BMW = new Auto();
+        Auto BMW = new Auto(true);
         BMW.sunroof = true;
 
         System.out.println("Путь, пройденный за 1.5 часа: " + BMW.distance(1.5) + " км");
@@ -32,4 +39,3 @@ public class Main {
         System.out.println("Наличие люка " + BMW.sunroof);
     }
 }
-
