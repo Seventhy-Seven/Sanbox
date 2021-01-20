@@ -1,0 +1,26 @@
+// Пример обработки исключения
+
+class DivisionByZero extends Exception{  // объявили класс для обработки деления на ноль
+    public String getMessage(){
+        return "Деление на ноль запрещено";  // описание исключения
+    }
+}
+
+class ExceptionDemo{
+    public static double divide(double dividend, double divisor) throws DivisionByZero{  // здесь указываем, что метод divide может выбросить исключение DivisionByZero
+        if(divisor==0) throw new DivisionByZero();  // если условие (divisor=0) выполняется, выбрасывается исключение
+        return dividend/divisor; // выполнение метода по умолчанию (даже если не выполняется условие)
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+            try {
+                ExceptionDemo.divide(8, 0);
+            } catch (DivisionByZero divisionByZero) {
+                System.out.println(divisionByZero.getMessage());
+            }
+    }
+}
+
