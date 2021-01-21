@@ -1,0 +1,27 @@
+// Простой пример интерфейса
+
+interface A{
+    void methodA();
+}
+
+interface B extends A{
+    void methodB();
+}
+
+class IExample implements B{
+    public void methodA(){
+        System.out.println("Метод А");
+    }
+    public void methodB(){
+        System.out.println("Метод Б");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        IExample ie = new IExample();
+        ie.methodA();
+        ie.methodB();
+    }
+}
+
